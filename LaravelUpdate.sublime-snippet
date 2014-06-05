@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+\$input  = Input::all();
+
+\$rules = array(
+	'title'	=>	'required|unique:[tablename],title,' . \$id,
+	);
+
+\$v = Validator::make(\$input, \$rules);
+
+if(\$v->passes())
+{
+
+	\$${1:name} = ${2:Model}::find($id);
+	\$${1:name}->title = \$input['title'];
+	\$${1:name}->save();
+
+	return Redirect::to('${3:path/to/index}')->withInput()->with('success', '${1:name} has been updated successfully.');
+
+} else {
+
+	return Redirect::to('${3:path/to/index}/'.$id.'/edit')->withInput()->withErrors(\$v);
+
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>laravelupdate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

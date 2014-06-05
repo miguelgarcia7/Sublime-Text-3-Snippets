@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+\$input  = Input::all();
+
+\$rules = array(
+	'title'	=>	'required',
+	);
+
+\$v = Validator::make(\$input, \$rules);
+
+if(\$v->passes())
+{
+
+	\$${1:name} = new ${2:Model}();
+	\$${1:name}->title = \$input['title'];
+	\$${1:name}->save();
+
+	return Redirect::to('${3:path/to/}')->withInput()->with('success', '${1:name} has been created successfully.');
+
+} else {
+
+	return Redirect::to('${3:path/to}/create')->withInput()->withErrors(\$v);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>laravelstore</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

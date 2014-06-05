@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+{{ Form::open(array('${1:url_or_route}' => '${2:path.to.url.or.route}', 'class' => 'form-admin')) }}
+
+	@if(\$errors->any())
+		<div class="alert alert-danger">
+			<ul>
+				{{ implode('', \$errors->all('<li class="error">:message</li>')) }}
+			</ul>
+		</div>
+	@endif
+
+	<div class="form-group">
+		{{ Form::label('title', 'Title *') }}
+		{{ Form::text('title', '', array('placeholder' =>'Title', 'class' => 'form-control')) }}
+	</div>
+	<div class="form-group">
+		{{ Form::label('email', 'Email *') }}
+		{{ Form::text('email', '', array('placeholder' =>'Email', 'class' => 'form-control')) }}
+	</div>
+	
+	<div class="form-group">
+		{{ Form::label('content', 'Content') }}
+		{{ Form::textarea('content', '', array('placeholder' =>'Content', 'class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::select('active', array('0' => 'Save as Draft', '1' => 'Publish'), null, array('class' => 'form-control')); }}
+	</div>
+
+	<div class="form-group pull-right">			
+		{{ link_to('${3:back/to/url}', 'Cancel',  array('class' => 'btn btn-danger')) }}
+		{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}
+	</div>
+
+{{ Form::close() }}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>laravelform</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
