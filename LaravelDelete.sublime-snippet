@@ -7,7 +7,7 @@
 return Redirect::to('${3:path/to/index}')->with('success', '${1:name} has been deleted.');
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>laraveldestroy</tabTrigger>
+	<tabTrigger>l::destroy</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
