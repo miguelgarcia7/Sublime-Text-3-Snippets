@@ -1,21 +1,26 @@
 <snippet>
     <content><![CDATA[
+<!DOCTYPE html>
 <html>
-<head>
-    <title>${1:title}</title>
-    <script src="https://fb.me/react-0.13.1.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.13.1.js"></script>
-</head>
-<body>
-    <div id="content"></div>
-    <script type="text/jsx">
-        ${2:code}
-    </script>
-</body>
+  <head>
+        <meta charset="utf-8" />
+        <title>${1:title}</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script type="text/babel">
+            ${2:code}
+        </script>
+    </body>
 </html>
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>React</tabTrigger>
+    <tabTrigger>react</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.js</scope>
 </snippet>
